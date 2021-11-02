@@ -1,12 +1,13 @@
 import Header from './page/Header';
 import Footer from './page/Footer';
+import Routes from './Routes';
 
 function App() {
   return (
     <div className="App">
       <Header />
       <div className="page-container">
-        <div>hi</div>
+        <Routes />
         <Footer />
       </div>
     </div>
