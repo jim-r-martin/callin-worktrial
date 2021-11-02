@@ -1,0 +1,166 @@
+@import './page.scss';
+
+body,html {
+  padding: 0;
+  margin: 0;
+  font-family: Causten,-apple-system,BlinkMacSystemFont,sans-serif;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none
+}
+
+input,textarea {
+  -moz-user-select: text;
+  -ms-user-select: text;
+  -webkit-user-select: text;
+  user-select: text
+}
+
+button {
+  font-family: Causten,-apple-system,BlinkMacSystemFont,sans-serif
+}
+
+h1 {
+  font-size: 192px
+}
+
+h1,h2 {
+  font-weight: 800;
+  padding: 0;
+  margin: 0
+}
+
+h2 {
+  font-size: 96px
+}
+
+h3 {
+  font-size: 48px;
+  font-weight: 800;
+  padding: 0;
+  margin: 0
+}
+
+h4 {
+  font-size: 32px
+}
+
+h4,h5 {
+  font-weight: 400;
+  padding: 0;
+  margin: 0
+}
+
+h5 {
+  font-size: 16px
+}
+
+h6 {
+  font-size: 12px;
+  font-weight: 400;
+  padding: 0;
+  margin: 0
+}
+
+a {
+  color: inherit;
+  text-decoration: none
+}
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box
+}
+
+@font-face {
+  font-family: Causten;
+  font-weight: 100;
+  src: url('https://www.callin.com/_next/static/media/Causten-Thin.40ed034f59bcfc81e23b20a94f59801e.otf')
+}
+
+@font-face {
+  font-family: Causten;
+  font-weight: 200;
+  src: url('https://www.callin.com/_next/static/media/Causten-ExtraLight.ad5b2ac9dfbcf0f0796f61666c15cc23.otf')
+}
+
+@font-face {
+  font-family: Causten;
+  font-weight: 300;
+  src: url('https://www.callin.com/_next/static/media/Causten-Light.7deeb33dade791b7597cd38417781aeb.otf')
+}
+
+@font-face {
+  font-family: Causten;
+  font-weight: 400;
+  src: url('https://www.callin.com/_next/static/media/Causten-Regular.0773a97f6dd99cf6f722f33d0ace428a.otf')
+}
+
+@font-face {
+  font-family: Causten;
+  font-weight: 500;
+  src: url('https://www.callin.com/_next/static/media/Causten-Medium.d6fa6ec3e995572da95f1ee34931c33c.otf')
+}
+
+@font-face {
+  font-family: Causten;
+  font-weight: 600;
+  src: url('https://www.callin.com/_next/static/media/Causten-SemiBold.9087dff14c8c1785861a5982ec1eeecc.otf')
+}
+
+@font-face {
+  font-family: Causten;
+  font-weight: 700;
+  src: url('https://www.callin.com/_next/static/media/Causten-Bold.d63174d4ac3ff97ee5849fee29159fba.otf')
+}
+
+@font-face {
+  font-family: Causten;
+  font-weight: 800;
+  src: url('https://www.callin.com/_next/static/media/Causten-ExtraBold.639449bdf446925ad12c11a3279c28a9.otf')
+}
+
+@font-face {
+  font-family: Causten;
+  font-weight: 900;
+  src: url('https://www.callin.com/_next/static/media/Causten-Black.01ad92ac074fca384df7afa41d5cdcd4.otf')
+}
+
+@media screen and (max-width: 768px) {
+  h1 {
+      font-size:64px
+  }
+
+  h2 {
+      font-size: 48px
+  }
+
+  h3 {
+      font-size: 32px
+  }
+
+  h4 {
+      font-size: 24px
+  }
+
+  h5 {
+      font-size: 12px
+  }
+
+  h6 {
+      font-size: 8px
+  }
+}
+
+hr.divider {
+  background-color: rgb(237, 237, 237);
+  color: rgb(237, 237, 237);
+  border: none;
+  width: 100%;
+  height: 1px;
+  margin: 0px;
+  padding: 0px;
+}
