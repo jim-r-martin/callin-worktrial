@@ -9,6 +9,8 @@ const READ_WEB_EPISODE = {
           id
           title
           description
+          publishedAt
+          runtime
           speakers {
             id
             first
@@ -19,6 +21,7 @@ const READ_WEB_EPISODE = {
             title
             photo
             categorizations {
+              id
               name
               photo
             }
@@ -45,6 +48,11 @@ const READ_WEB_SHOW = {
           description
           photo
           subscribesCount
+          hosts {
+            id
+            first
+            photo
+          }
           episodes {
             id
             title
@@ -56,6 +64,7 @@ const READ_WEB_SHOW = {
             }
           }
           categorizations {
+            id
             name
             photo
           }

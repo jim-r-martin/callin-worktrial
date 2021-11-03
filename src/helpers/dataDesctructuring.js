@@ -6,4 +6,12 @@ const getEpisodeAndSuccess = (data) => {
   return {};
 };
 
-export { getEpisodeAndSuccess };
+const getShowAndSuccess = (data) => {
+  if (data && data.readWebShow) {
+    const { show, success } = data.readWebShow;
+    return { show, success };
+  }
+  return {};
+};
+
+export { getEpisodeAndSuccess, getShowAndSuccess };

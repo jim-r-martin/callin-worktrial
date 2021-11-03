@@ -12,7 +12,6 @@ export default function EpisodeContainer() {
     link,
   });
 
-  // extract variables from data
   const { episode, success } = useMemo(
     () => getEpisodeAndSuccess(data),
     [data]
