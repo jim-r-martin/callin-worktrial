@@ -3,12 +3,20 @@
 .header {
   margin-bottom: 16px;
   font-size: 36px;
+
+  @media screen and (max-width: 768px) {
+    font-size: 24px;
+  }
 }
 
 .view-content-container {
   display: flex;
   flex-direction: row;
   margin-top: 8px;
+
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+  }
 }
 
 .content-left-col {
@@ -23,10 +31,33 @@
 
 .view-section-container {
   margin: 16px 0;
+
+  &.zero-top-mgn-on-mobile {
+    @media screen and (max-width: 768px) {
+      margin-top: 0;
+    }
+  }
+
+  &.show-on-mobile {
+    display: none;
+    @media screen and (max-width: 768px) {
+      display: block;
+    }
+  }
+
+  &.neg-8-top-margin {
+    margin-top: -8px;
+  }
 }
 
 .view-section {
   margin-bottom: 16px;
+
+  &.hide-on-mobile {
+    @media screen and (max-width: 768px) {
+      display: none;
+    }
+  }
 }
 
 hr.divider {

@@ -35,7 +35,7 @@ export default function EpisodePage({ episode = {}, errors }) {
                 alt={`${episode.show.title}`}
               />
             </Section>
-            <Section classes="meta-text steel-text elips-overflow">
+            <Section classes="meta-text steel-text elips-overflow hide-on-mobile">
               {`${formatDate(episode.publishedAt)}  •  ${formatRunTime(
                 episode.runtime
               )}`}
@@ -43,7 +43,7 @@ export default function EpisodePage({ episode = {}, errors }) {
           </SectionContainer>
         </ContentLeftCol>
         <ContentRightCol>
-          <SectionContainer>
+          <SectionContainer classes="zero-top-mgn-on-mobile">
             <Section classes="episode-title">
               <span className="title">{episode.title}</span>
             </Section>
@@ -53,6 +53,11 @@ export default function EpisodePage({ episode = {}, errors }) {
                   {episode.show.title}
                 </div>
               </Link>
+            </Section>
+            <Section classes="meta-text steel-text elips-overflow show-on-mobile neg-8-top-margin">
+              {`${formatDate(episode.publishedAt)}  •  ${formatRunTime(
+                episode.runtime
+              )}`}
             </Section>
             <Section>
               <CategoriesList categorizations={episode.show.categorizations} />
