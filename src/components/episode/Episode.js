@@ -3,6 +3,15 @@ import { Link } from "react-router-dom";
 import MetaTitle from "../shared/MetaTitle";
 import CategoriesList from "../shared/CategoriesList";
 import UsersList from "../shared/UsersList";
+import {
+  ContentHeader,
+  ContentContainer,
+  ContentLeftCol,
+  ContentRightCol,
+  SectionContainer,
+  Section,
+  Divider,
+} from "../shared/Presentation";
 import { formatDate, formatRunTime } from "../../helpers/format";
 
 export default function Episode({ episode = {}, errors }) {
@@ -14,61 +23,56 @@ export default function Episode({ episode = {}, errors }) {
   return (
     <div>
       <MetaTitle title={episode.title} />
-      <div className="header">
-        <span className="callin-red">
-          <b>Callin</b>
-        </span>{" "}
-        <span>Episode Preview</span>
-      </div>
-      <hr className="divider" />
-      <div className="view-content-container">
-        <div className="content-col content-left-col">
-          <div className="view-section-container">
-            <div className="view-section image-container">
+      <ContentHeader headerText="Episode Preview" />
+      <Divider />
+      <ContentContainer>
+        <ContentLeftCol>
+          <SectionContainer>
+            <Section classes="image-container">
               <img
                 className="profile-photo"
                 src={episode.show.photo}
                 alt={`${episode.show.title}`}
               />
-            </div>
-            <div className="view-section meta-text steel-text elips-overflow">
+            </Section>
+            <Section classes="meta-text steel-text elips-overflow">
               {`${formatDate(episode.publishedAt)}  •  ${formatRunTime(
                 episode.runtime
               )}`}
-            </div>
-          </div>
-        </div>
-        <div className="content-col content-right-col">
-          <div className="view-section-container">
-            <div className="view-section episode-title">
+            </Section>
+          </SectionContainer>
+        </ContentLeftCol>
+        <ContentRightCol>
+          <SectionContainer>
+            <Section classes="episode-title">
               <span className="title">{episode.title}</span>
-            </div>
-            <div className="view-section">
+            </Section>
+            <Section>
               <Link to={showLinkPath}>
                 <div className="elips-overflow callin-red body-text undline-hvr">
                   {episode.show.title}
                 </div>
               </Link>
-            </div>
-            <div className="view-section">
+            </Section>
+            <Section>
               <CategoriesList categorizations={episode.show.categorizations} />
-            </div>
-          </div>
-          <hr className="divider" />
-          <div className="view-section-container">
-            <div className="view-section">
-              <b>Hosts</b>
-            </div>
-            <div className="view-section">
+            </Section>
+          </SectionContainer>
+          <Divider />
+          <SectionContainer>
+            <Section>
+              <b>Speakers</b>
+            </Section>
+            <Section>
               <UsersList users={episode.speakers} />
-            </div>
-          </div>
-          <hr className="divider" />
-          <div className="view-section-container description">
-            <div className="view-section">{episode.description}</div>
-          </div>
-        </div>
-      </div>
+            </Section>
+          </SectionContainer>
+          <Divider />
+          <SectionContainer classes="description">
+            <Section>{episode.description}</Section>
+          </SectionContainer>
+        </ContentRightCol>
+      </ContentContainer>
     </div>
   );
 }

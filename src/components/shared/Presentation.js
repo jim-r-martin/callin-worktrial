@@ -1,3 +1,12 @@
+const ContentHeader = ({ headerText }) => (
+  <div className="header">
+    <span className="callin-red">
+      <b>Callin</b>
+    </span>{" "}
+    <span>{headerText}</span>
+  </div>
+);
+
 const ContentContainer = ({ children, classes = "" }) => (
   <div className={`view-content-container ${classes}`}>{children}</div>
 );
@@ -21,6 +30,7 @@ const Section = ({ children, classes = "" }) => (
 const Divider = ({ classes = "" }) => <hr className={`divider ${classes}`} />;
 
 export {
+  ContentHeader,
   ContentContainer,
   ContentLeftCol,
   ContentRightCol,
