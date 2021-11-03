@@ -39,9 +39,22 @@
 .footer-link {
   color: #1a1a1a;
   text-decoration: none;
+  margin-right: 24px;
+
+  &:last-of-type {
+    margin-right: 0;
+  }
 
   h5,img {
     display: inline-block;
-    margin-right: 24px;
   }
+
+  &.icon img {
+    height: 24px;
+    width: 24px;
+  }
+}
+
+.bottom-footer-copy {
+  margin-top: 16px;
 }
