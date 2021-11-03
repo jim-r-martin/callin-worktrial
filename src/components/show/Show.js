@@ -2,61 +2,65 @@ import MetaTitle from "../shared/MetaTitle";
 import EpisodesList from "./EpisodesList";
 import CategoriesList from "../shared/CategoriesList";
 import UsersList from "../shared/UsersList";
+import {
+  ContentHeader,
+  ContentContainer,
+  ContentLeftCol,
+  ContentRightCol,
+  SectionContainer,
+  Section,
+  Divider,
+} from "../shared/Presentation";
 import { formatSubscribersStr, formatEpisodesStr } from "../../helpers/format";
 
 export default function Show({ show = {}, errors }) {
   return (
     <div>
       <MetaTitle title={show.title} />
-      <div className="header">
-        <span className="callin-red">
-          <b>Callin</b>
-        </span>{" "}
-        <span>Show Preview</span>
-      </div>
-      <hr className="divider" />
-      <div className="view-content-container">
-        <div className="content-col content-left-col">
-          <div className="view-section-container">
-            <div className="view-section image-container">
+      <ContentHeader headerText="Show Preview" />
+      <Divider />
+      <ContentContainer>
+        <ContentLeftCol>
+          <SectionContainer>
+            <Section classes="image-container">
               <img
                 className="profile-photo"
                 src={show.photo}
                 alt={`${show.title}`}
               />
-            </div>
-            <div className="view-section counts">
+            </Section>
+            <Section classes="counts">
               {`${formatSubscribersStr(
                 show.subscribesCount
               )}  •  ${formatEpisodesStr(show.episodes.length)}`}
-            </div>
-          </div>
-          <hr className="divider" />
-          <div className="view-section-container description">
-            <div className="view-section">{show.description}</div>
-          </div>
-        </div>
-        <div className="content-col content-right-col">
-          <div className="view-section-container">
-            <div className="view-section">
+            </Section>
+          </SectionContainer>
+          <Divider />
+          <SectionContainer classes="description">
+            <Section>{show.description}</Section>
+          </SectionContainer>
+        </ContentLeftCol>
+        <ContentRightCol>
+          <SectionContainer>
+            <Section>
               <span className="title">{show.title}</span>
-            </div>
-            <div className="view-section">
+            </Section>
+            <Section>
               <CategoriesList categorizations={show.categorizations} />
-            </div>
-          </div>
-          <hr className="divider" />
-          <div className="view-section-container">
-            <div className="view-section">
+            </Section>
+          </SectionContainer>
+          <Divider />
+          <SectionContainer>
+            <Section>
               <b>Hosts</b>
-            </div>
-            <div className="view-section">
+            </Section>
+            <Section>
               <UsersList users={show.hosts} />
-            </div>
-          </div>
+            </Section>
+          </SectionContainer>
           <EpisodesList episodes={show.episodes} />
-        </div>
-      </div>
+        </ContentRightCol>
+      </ContentContainer>
     </div>
   );
 }
