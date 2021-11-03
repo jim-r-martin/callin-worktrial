@@ -1,0 +1,47 @@
+@import './colors.scss';
+
+// COLORS
+.callin-red {
+  color: $callin-red;
+}
+
+.dark-text {
+  color: $eerie-black;
+}
+
+.steel-text {
+  color: $industrial-gray;
+}
+
+// TEXT FORMATTING
+.elips-overflow {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: none;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.undline-hvr:hover {
+  text-decoration: underline;
+}
+
+.body-text-bold {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.body-text {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.meta-text {
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 600;
+}

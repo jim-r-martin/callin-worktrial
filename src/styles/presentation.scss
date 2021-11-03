@@ -1,0 +1,40 @@
+@import './colors.scss';
+
+.header {
+  margin-bottom: 16px;
+  font-size: 36px;
+}
+
+.view-content-container {
+  display: flex;
+  flex-direction: row;
+  margin-top: 8px;
+}
+
+.content-left-col {
+  width: 30%;
+  min-width: 200px;
+  margin-right: 5%;
+}
+
+.content-right-col {
+  flex: 1 1;
+}
+
+.view-section-container {
+  margin: 16px 0;
+}
+
+.view-section {
+  margin-bottom: 16px;
+}
+
+hr.divider {
+  background-color: $gallery-white;
+  color: $gallery-white;
+  border: none;
+  width: 100%;
+  height: 1px;
+  margin: 0px;
+  padding: 0px;
+}

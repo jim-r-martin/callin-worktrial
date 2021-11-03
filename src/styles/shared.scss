@@ -1,94 +1,12 @@
 @import './colors.scss';
 
-// COLORS
-.callin-red {
-  color: $callin-red;
-}
-
-.dark-text {
-  color: $eerie-black;
-}
-
-.steel-text {
-  color: $industrial-gray;
-}
-
-// TEXT FORMATTING
-.elips-overflow {
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: none;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.undline-hvr:hover {
-  text-decoration: underline;
-}
-
-.body-text-bold {
-  font-size: 16px;
-  font-weight: 600;
-}
-
-.body-text {
-  font-size: 16px;
-  font-weight: 400;
-}
-
-.meta-text {
-  font-size: 14px;
-  font-weight: 400;
-}
-
-// DIVIDERS
-hr.divider {
-  background-color: $gallery-white;
-  color: $gallery-white;
-  border: none;
-  width: 100%;
-  height: 1px;
-  margin: 0px;
-  padding: 0px;
-}
-
-// CONTAINERS
-.header {
-  margin-bottom: 16px;
-  font-size: 36px;
-}
-
-.view-content-container {
-  display: flex;
-  flex-direction: row;
-  margin-top: 8px;
-}
-
-.content-left-col {
-  width: 30%;
-  min-width: 200px;
-  margin-right: 5%;
-}
-
-.content-right-col {
-  flex: 1 1;
-}
-
-.view-section-container {
-  margin: 16px 0;
-}
-
-.view-section {
-  margin-bottom: 16px;
-}
-
 .image-container {
   position: relative;
   width: 100%;
   padding-top: 100%;
 }
 
-.profile-photo {
+.abs-pos-img {
   position: absolute;
   top: 0;
   left: 0;
@@ -96,23 +14,28 @@ hr.divider {
   max-width: 100%;
   min-height: 100%;
   max-height: 100%;
-  object-fit: cover;
+  object-fit: contain;
+}
+
+.show-photo {
   border-radius: 5%;
 }
 
+.view-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  width: 100%;
 
-.counts {
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: none;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  font-size: 16px;
-  font-weight: 400;
-  color: $industrial-gray;
-}
+  &::-webkit-scrollbar {
+    display: none;
+  }
 
-.title {
-  font-size: 24px;
-  font-weight: 600;
+  .view-list-item:nth-of-type(1) {
+    margin-left: 0;
+  }
 }

@@ -7,7 +7,7 @@ export default function CategoriesList({ categorizations }) {
             <div className="image-container">
               <img
                 alt={category.name}
-                className="category-image"
+                className="abs-pos-img"
                 src={category.photo}
               />
             </div>

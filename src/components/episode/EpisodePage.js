@@ -30,7 +30,7 @@ export default function EpisodePage({ episode = {}, errors }) {
           <SectionContainer>
             <Section classes="image-container">
               <img
-                className="profile-photo"
+                className="abs-pos-img show-photo"
                 src={episode.show.photo}
                 alt={`${episode.show.title}`}
               />

@@ -1,0 +1,21 @@
+.episodes-list {
+  .view-list-item {
+    width: 100%;
+  }
+
+  .episode-item-container {
+    padding: 24px 12px 24px 4px;
+
+    > div {
+      margin-bottom: 8px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+.view-section.episode-title {
+  margin-bottom: 4px;
+}

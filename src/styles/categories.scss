@@ -1,0 +1,30 @@
+@import './colors.scss';
+
+.categories-list {
+  .view-list-item {
+    flex: 0 0 auto;
+    margin-left: 8px;
+  }
+
+  .category-badge {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    padding: 8px 12px;
+    background-color: $gallery-white;
+
+    .image-container {
+      display: inline-block;
+      position: relative;
+      width: 20px;
+      padding-top: 20px;
+    }
+
+    .category-name {
+      margin-left: 8px;
+      color: $industrial-gray;
+    }
+  }
+}

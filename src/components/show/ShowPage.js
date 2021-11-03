@@ -24,12 +24,12 @@ export default function ShowPage({ show = {}, errors }) {
           <SectionContainer>
             <Section classes="image-container">
               <img
-                className="profile-photo"
+                className="abs-pos-img show-photo"
                 src={show.photo}
                 alt={`${show.title}`}
               />
             </Section>
-            <Section classes="counts">
+            <Section classes="elips-overflow body-text steel-text">
               {`${formatSubscribersStr(
                 show.subscribesCount
               )}  •  ${formatEpisodesStr(show.episodes.length)}`}

@@ -1,0 +1,27 @@
+@import './colors.scss';
+
+.users-list {
+  .view-list-item {
+    flex: 0 0 auto;
+    margin-left: 24px;
+  }
+
+  .user-container {
+    display: block;
+
+    .image-container {
+      display: block;
+      position: relative;
+      width: 72px;
+      padding-top: 72px;
+
+      .user-image {
+        border-radius: 50%;
+      }
+    }
+
+    .user-name {
+      text-align: center;
+    }
+  }
+}

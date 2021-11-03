@@ -1,13 +1,19 @@
 export default function UsersList({ users }) {
   return (
-    <ul className="view-list host-list">
+    <ul className="view-list users-list">
       {users.map((user, index) => (
         <li className="view-list-item" key={user.id}>
-          <div className="host-container">
+          <div className="user-container">
             <div className="image-container">
-              <img alt={user.name} className="host-image" src={user.photo} />
+              <img
+                alt={user.name}
+                className="abs-pos-img user-image"
+                src={user.photo}
+              />
             </div>
-            <div className="host-name">{user.first}</div>
+            <div className="user-name dark-text elips-overflow body-text">
+              {user.first}
+            </div>
           </div>
         </li>
       ))}
