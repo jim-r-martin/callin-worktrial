@@ -9,8 +9,6 @@ export default function Episode() {
     link,
   });
 
-  console.log(data);
-
   return (
     <div>
       {data &&

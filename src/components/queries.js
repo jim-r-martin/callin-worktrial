@@ -32,4 +32,37 @@ const READ_WEB_EPISODE = {
   `,
 };
 
-export { READ_WEB_EPISODE };
+const READ_WEB_SHOW = {
+  operationName: "ReadWebShow",
+  query: `
+    query ReadWebShow($link: ID!) {
+      readWebShow(link: $link) {
+        success
+        errors
+        show {
+          id
+          title
+          description
+          photo
+          subscribesCount
+          episodes {
+            id
+            title
+            description
+            publishedAt
+            runtime
+            linkObj {
+              resourceUrl
+            }
+          }
+          categorizations {
+            name
+            photo
+          }
+        }
+      }
+    }
+  `,
+};
+
+export { READ_WEB_EPISODE, READ_WEB_SHOW };

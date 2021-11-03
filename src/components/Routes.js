@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Episode from "./Episode";
+import Show from "./Show";
 
 export default function Routes() {
   return (
@@ -10,6 +11,9 @@ export default function Routes() {
         </Route>
         <Route path="/episode/:slug">
           <Episode />
+        </Route>
+        <Route path="/show/:slug">
+          <Show />
         </Route>
         <Route path="*">
           <div>404</div>
