@@ -29,22 +29,26 @@ export default function ShowPage({ show = {}, errors }) {
                 alt={`${show.title}`}
               />
             </Section>
+            <Section classes="show-on-mobile small-margin">
+              <span className="title">{show.title}</span>
+            </Section>
             <Section classes="elips-overflow body-text steel-text">
               {`${formatSubscribersStr(
                 show.subscribesCount
               )}  •  ${formatEpisodesStr(show.episodes.length)}`}
             </Section>
           </SectionContainer>
-          <Divider />
-          <SectionContainer classes="description">
+          <Divider classes="hide-on-mobile" />
+          <SectionContainer classes="description hide-on-mobile">
             <Section>{show.description}</Section>
           </SectionContainer>
         </ContentLeftCol>
         <ContentRightCol>
           <SectionContainer>
-            <Section>
+            <Section classes="hide-on-mobile">
               <span className="title">{show.title}</span>
             </Section>
+            <Section classes="show-on-mobile">{show.description}</Section>
             <Section>
               <CategoriesList categorizations={show.categorizations} />
             </Section>

@@ -44,7 +44,7 @@ export default function EpisodePage({ episode = {}, errors }) {
         </ContentLeftCol>
         <ContentRightCol>
           <SectionContainer classes="zero-top-mgn-on-mobile">
-            <Section classes="episode-title">
+            <Section classes="small-margin">
               <span className="title">{episode.title}</span>
             </Section>
             <Section>

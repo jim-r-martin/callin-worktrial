@@ -38,26 +38,31 @@
     }
   }
 
-  &.show-on-mobile {
+  .show-on-mobile, &.show-on-mobile {
     display: none;
     @media screen and (max-width: 768px) {
       display: block;
     }
   }
 
-  &.neg-8-top-margin {
+
+  .hide-on-mobile, &.hide-on-mobile {
+    @media screen and (max-width: 768px) {
+      display: none;
+    }
+  }
+
+  .neg-8-top-margin, &.neg-8-top-margin {
     margin-top: -8px;
   }
 }
 
 .view-section {
   margin-bottom: 16px;
+}
 
-  &.hide-on-mobile {
-    @media screen and (max-width: 768px) {
-      display: none;
-    }
-  }
+.view-section.small-margin {
+  margin-bottom: 4px;
 }
 
 hr.divider {
