@@ -1,26 +1,26 @@
+import { Divider } from "../shared/Presentation";
+
 export default function Footer() {
   return (
     <div className="footer-container">
-      <hr className="divider" />
+      <Divider />
       <div className="footer-bottom-container">
-        <div>
-          <div>
-            <a className="footer-link" href="https://www.callin.com/pp">
-              <h5>Privacy Policy</h5>
-            </a>
-            <a className="footer-link" href="https://www.callin.com/tos">
-              <h5>Terms of Service</h5>
-            </a>
-            <a
-              className="footer-link"
-              href="https://callin-privacy.my.onetrust.com/webform/899bbb81-2409-4eff-886e-4b21154e4b82/2dd5f9b8-c782-4f8e-8154-e855b7c54a2f"
-            >
-              <h5>Do Not Sell My Information</h5>
-            </a>
-          </div>
+        <div className="footer-col internal-links">
+          <a className="footer-link" href="https://www.callin.com/pp">
+            <h5>Privacy Policy</h5>
+          </a>
+          <a className="footer-link" href="https://www.callin.com/tos">
+            <h5>Terms of Service</h5>
+          </a>
+          <a
+            className="footer-link"
+            href="https://callin-privacy.my.onetrust.com/webform/899bbb81-2409-4eff-886e-4b21154e4b82/2dd5f9b8-c782-4f8e-8154-e855b7c54a2f"
+          >
+            <h5>Do Not Sell My Information</h5>
+          </a>
           <h5 className="bottom-footer-copy">© Callin Corp. 2021</h5>
         </div>
-        <div style={{ marginLeft: "auto" }}>
+        <div className="footer-col social-links">
           <a
             className="footer-link icon"
             href="https://instagram.com/callinapp"
