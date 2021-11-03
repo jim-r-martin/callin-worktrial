@@ -1,7 +1,7 @@
 import { useMemo } from "react";
 import useLink from "../hooks/useLink";
 import useQuery from "../hooks/useQuery";
-import { READ_WEB_EPISODE } from "../queries";
+import { READ_WEB_EPISODE } from "../../gql/queries";
 import Episode from "./Episode";
 import PageNotFound from "../page/PageNotFound";
 import { getEpisodeAndSuccess } from "../../helpers/dataDesctructuring";

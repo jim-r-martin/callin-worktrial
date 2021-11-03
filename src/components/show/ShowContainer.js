@@ -1,6 +1,6 @@
 import useQuery from "../hooks/useQuery";
 import useLink from "../hooks/useLink";
-import { READ_WEB_SHOW } from "../queries";
+import { READ_WEB_SHOW } from "../../gql/queries";
 import Show from "./Show";
 import PageNotFound from "../page/PageNotFound";
 import { getShowAndSuccess } from "../../helpers/dataDesctructuring";
