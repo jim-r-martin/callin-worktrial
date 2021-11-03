@@ -1,12 +1,12 @@
 import useQuery from "../hooks/useQuery";
 import useLink from "../hooks/useLink";
 import { READ_WEB_SHOW } from "../../gql/queries";
-import Show from "./Show";
+import ShowPage from "./ShowPage";
 import PageNotFound from "../page/PageNotFound";
 import { getShowAndSuccess } from "../../helpers/dataDesctructuring";
 import { useMemo } from "react";
 
-export default function ShowContainer() {
+export default function ShowPageContainer() {
   const link = useLink();
   const { loading, errors, data } = useQuery(READ_WEB_SHOW, {
     link,
@@ -22,5 +22,5 @@ export default function ShowContainer() {
     return <PageNotFound />;
   }
 
-  return <Show errors={errors} show={show} />;
+  return <ShowPage errors={errors} show={show} />;
 }

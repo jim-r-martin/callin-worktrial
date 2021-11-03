@@ -14,7 +14,7 @@ import {
 } from "../shared/Presentation";
 import { formatDate, formatRunTime } from "../../helpers/format";
 
-export default function Episode({ episode = {}, errors }) {
+export default function EpisodePage({ episode = {}, errors }) {
   const showLinkPath = useMemo(() => {
     const path = episode.show.linkObj.resourceUrl.split(".com")[1];
     return path;

@@ -13,7 +13,7 @@ import {
 } from "../shared/Presentation";
 import { formatSubscribersStr, formatEpisodesStr } from "../../helpers/format";
 
-export default function Show({ show = {}, errors }) {
+export default function ShowPage({ show = {}, errors }) {
   return (
     <div>
       <MetaTitle title={show.title} />

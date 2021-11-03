@@ -2,7 +2,7 @@ import { useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import { formatDate, formatRunTime } from "../../helpers/format";
 
-export default function Episode({ episode }) {
+export default function EpisodeItem({ episode }) {
   const [hovered, setHovered] = useState(false);
   const linkPath = useMemo(() => {
     const path = episode.linkObj.resourceUrl.split(".com")[1];

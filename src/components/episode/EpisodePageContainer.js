@@ -2,11 +2,11 @@ import { useMemo } from "react";
 import useLink from "../hooks/useLink";
 import useQuery from "../hooks/useQuery";
 import { READ_WEB_EPISODE } from "../../gql/queries";
-import Episode from "./Episode";
+import EpisodePage from "./EpisodePage";
 import PageNotFound from "../page/PageNotFound";
 import { getEpisodeAndSuccess } from "../../helpers/dataDesctructuring";
 
-export default function EpisodeContainer() {
+export default function EpisodePageContainer() {
   const link = useLink();
   const { loading, errors, data } = useQuery(READ_WEB_EPISODE, {
     link,
@@ -25,5 +25,5 @@ export default function EpisodeContainer() {
     return <PageNotFound />;
   }
 
-  return <Episode errors={errors} episode={episode} />;
+  return <EpisodePage errors={errors} episode={episode} />;
 }

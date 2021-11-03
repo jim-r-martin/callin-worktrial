@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import EpisodeContainer from "./episode/EpisodeContainer";
-import ShowContainer from "./show/ShowContainer";
+import EpisodePageContainer from "../episode/EpisodePageContainer";
+import ShowPageContainer from "../show/ShowPageContainer";
 
 export default function Routes() {
   return (
@@ -10,10 +10,10 @@ export default function Routes() {
           <div>Home Page</div>
         </Route>
         <Route path="/episode/:slug">
-          <EpisodeContainer />
+          <EpisodePageContainer />
         </Route>
         <Route path="/show/:slug">
-          <ShowContainer />
+          <ShowPageContainer />
         </Route>
         <Route path="*">
           <div>404</div>

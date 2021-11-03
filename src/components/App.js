@@ -1,7 +1,7 @@
 import { HelmetProvider } from "react-helmet-async";
 import Header from "./page/Header";
 import Footer from "./page/Footer";
-import Routes from "./Routes";
+import Routes from "./page/Routes";
 
 function App() {
   return (
