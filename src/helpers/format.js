@@ -1,17 +1,4 @@
-const monthAbrevs = [
-  "Jan",
-  "Feb",
-  "Mar",
-  "Apr",
-  "May",
-  "Jun",
-  "Jul",
-  "Aug",
-  "Sep",
-  "Oct",
-  "Nov",
-  "Dec",
-];
+import { MONTH_ABREV_LIST } from "./constants";
 
 function formatSubscribersStr(subscribersCount) {
   if (!subscribersCount) {
@@ -35,7 +22,7 @@ function formatEpisodesStr(episodeCount) {
 
 function formatDate(seconds) {
   const dateObj = new Date(seconds * 1000);
-  const month = monthAbrevs[dateObj.getMonth()];
+  const month = MONTH_ABREV_LIST[dateObj.getMonth()];
   const date = dateObj.getMonth();
   const year = dateObj.getFullYear();
 
