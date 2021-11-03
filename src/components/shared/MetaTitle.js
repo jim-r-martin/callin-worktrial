@@ -1,10 +1,9 @@
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 
 export default function MetaTitle({ title }) {
-  console.log(title);
   return (
     <Helmet>
-      {/* {title && typeof title === "string" ? <title>{title}</title> : ""} */}
+      {title && typeof title === "string" ? <title>{title}</title> : ""}
     </Helmet>
   );
 }
