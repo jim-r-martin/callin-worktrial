@@ -1,70 +1,35 @@
-# Getting Started with Create React App
+# Jim Martin Callin Work Trial
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A web application mirroring the functionality of the Callin site, specifically the episode and show pages.
 
-## Available Scripts
+## Accessing the hosted client
 
-In the project directory, you can run:
+The application can be accessed at https://callin-worktrial.herokuapp.com/.
+The core portion of the implented client can be found at the path '/episode/{episode-title}-{episode-link-id}' or '/show/{show-title}-{show-link-id}'
 
-### `npm start`
+Below is a list of some links for testing the different pages and functionality
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+* [Show](https://callin-worktrial.herokuapp.com/show/a-kiss-on-the-lips-phjmSjCNLM)
+* [Episode](https://callin-worktrial.herokuapp.com/episode/emotes-yRZyeGfcUn)
+* [Episode that has audio](https://callin-worktrial.herokuapp.com/episode/x-CstOqNRiiS) should hear keyboard clicks about 9 secs in
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Technical Decisions and Considerations
 
-### `npm test`
+### Connection to GraphQL backend
+I decided to use the fetch api rather than a framework like apollo or relay. The benefit in this approach is not having to increase the bundle size while being pretty straightforward and not requiring much extra development work. I did abstracted out the logic of making a query in a very similar manner to how apollo works so if that transition were necessary in the future it should not be too much work. The main drawback is not having a client side cache out of the box. Something to consider as the application were to grow.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### HLS Media Player
+I went with using the ReactPlayer package which provides a react component for rendering media players. This package is lightweight and is pretty straightforward to use. It also provides an easy framework for dealing with handling hls on platforms where it is natively handled (iOS) and where it is not.
 
-### `npm run build`
+### Improved UX regarding images
+Implemented block elements that fill the space where images will render to prevent jerky page jumps on image loads. Also implemnted a transition state
+for when images do load so that is more smooth. One final thing to note is I did notice that the user photo images are much larger than what is actually rendered. I could see value in potentially storing smaller versions of the user photo. Would of course need to weigh the trade-off in increased complexity on the backend as well as an increase in cloud storage usage.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Notes on work I did not get to
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Search Bar
+This should be relatively straightforward. Make queries based on user input and render the results. I would most likely think to use debouncing to trigger the queries, as apposed to requiring the user to hit enter or click on a submit button. Also for the UI I would probably split out the results for episodes vs shows. 
+Two things I noticed that I would want to call out with regards to the client opperating as the product scales. The first is that the readShowsSearch query accepts a limit param but readEpisodesSearch does not. Also, in my inital pass through the schema docs I did not see the ability to paginate these responses, which could definitely help improve the ux at some point in the future.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Testing
+With the short time frame I did not write any tests. I will say though my philosophy on testing is to rely very heavily on unit tests and then run integration tests on where necessary for critical/high-impact flows. This focus on writing unit tests is why I like to seperate out container and presentational components (ex: ContainerStagePage vs StagePage). It makes it much easier to test and makes mocking data a lot easier bc you don't need to stub the api calls.
