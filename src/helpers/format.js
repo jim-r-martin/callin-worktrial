@@ -29,18 +29,24 @@ function formatDate(seconds) {
   return `${month} ${date} ${year}`;
 }
 
-function formatRunTime(mins) {
-  const minInt = parseInt(mins);
-  if (minInt < 120) {
-    return `${minInt} min`;
+function formatRunTime(seconds) {
+  const secondsInt = parseInt(seconds);
+  const totalMins = Math.floor(secondsInt / 60);
+  const hours = Math.floor(totalMins / 60);
+  const mins = totalMins % 60;
+
+  let runTimeString = "";
+
+  if (hours > 1) {
+    runTimeString += `${hours} hours`;
+    if (mins > 0) {
+      runTimeString += mins > 1 ? ` ${mins} mins` : " 1 min";
+    }
+    return runTimeString;
   }
 
-  const hrs = Math.floor(minInt / 60);
-  const remainingMins = minInt % 60;
-  if (remainingMins) {
-    return `${hrs} hours ${remainingMins} min`;
-  }
-  return `${hrs} hours`;
+  runTimeString = totalMins > 1 ? `${totalMins} mins` : "1 min";
+  return runTimeString;
 }
 
 export { formatDate, formatRunTime, formatSubscribersStr, formatEpisodesStr };

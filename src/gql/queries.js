@@ -11,6 +11,7 @@ const READ_WEB_EPISODE = {
           description
           publishedAt
           runtime
+          m3u8
           speakers {
             id
             first
