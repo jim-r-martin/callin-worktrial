@@ -1,4 +1,4 @@
-import MetaTitle from "../shared/MetaTitle";
+import DocHeaderTags from "../shared/DocHeaderTags";
 import EpisodesList from "./EpisodesList";
 import CategoriesList from "../shared/CategoriesList";
 import UsersList from "../shared/UsersList";
@@ -15,10 +15,10 @@ import {
 } from "../shared/Presentation";
 import { formatSubscribersStr, formatEpisodesStr } from "../../helpers/format";
 
-export default function ShowPage({ show = {}, errors }) {
+export default function ShowPage({ show = {} }) {
   return (
     <div>
-      <MetaTitle title={show.title} />
+      <DocHeaderTags title={show.title} description={show.description} />
       <ContentHeader headerText="Show Preview" />
       <Divider />
       <ContentContainer>

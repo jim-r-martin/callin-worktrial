@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { useShowPath } from "../hooks/useRelPaths";
 import MediaPlayer from "../media-player/MediaPlayer";
-import MetaTitle from "../shared/MetaTitle";
+import DocHeaderTags from "../shared/DocHeaderTags";
 import CategoriesList from "../shared/CategoriesList";
 import UsersList from "../shared/UsersList";
 import ImageFadeIn from "../shared/ImageFadeIn";
@@ -22,7 +22,7 @@ export default function EpisodePage({ episode = {}, errors }) {
 
   return (
     <div>
-      <MetaTitle title={episode.title} />
+      <DocHeaderTags title={episode.title} description={episode.description} />
       <ContentHeader headerText="Episode Preview" />
       <Divider />
       <ContentContainer>
