@@ -3,6 +3,7 @@ import useLink from "../hooks/useLink";
 import useQuery from "../hooks/useQuery";
 import { READ_WEB_EPISODE } from "../../gql/queries";
 import EpisodePage from "./EpisodePage";
+import SkeletonPage from "../shared/SkeletonPage";
 import PageNotFound from "../page/PageNotFound";
 import { getEpisodeAndSuccess } from "../../helpers/dataDesctructuring";
 
@@ -18,7 +19,7 @@ export default function EpisodePageContainer() {
   );
 
   if (loading) {
-    return <div>loading</div>;
+    return <SkeletonPage headerText="Episode Preview" />;
   }
 
   if (!episode && success) {
