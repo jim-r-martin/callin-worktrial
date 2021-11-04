@@ -104,3 +104,46 @@
     margin: 0 0 8px 0;
   }
 }
+
+
+// Styles for PageNoteFound and ErrorPage components
+// in a real-world scenario I would break these out but for brevitys sake I threw them in here
+.page-not-found {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: 35vh;
+
+  .left {
+    display: inline-block;
+    border-right: 1px solid rgba(0, 0, 0,.3);
+    margin: 0;
+    margin-right: 20px;
+    padding: 10px 23px 10px 0;
+    font-size: 36px;
+    font-weight: 500;
+    vertical-align: top;
+  }
+
+  .right {
+    display: inline-block;
+    text-align: left;
+    vertical-align: middle;
+    font-size: 24px;
+    font-weight: normal;
+    line-height: inherit;
+    margin: 0;
+    padding: 0;
+  }
+
+  @media screen and (max-width:768px) {
+    .left {
+      font-size: 24px;
+    }
+
+    .right {
+      font-size: 14px;
+    }
+  }
+}

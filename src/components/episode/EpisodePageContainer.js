@@ -4,7 +4,7 @@ import useQuery from "../hooks/useQuery";
 import { READ_WEB_EPISODE } from "../../gql/queries";
 import EpisodePage from "./EpisodePage";
 import SkeletonPage from "../shared/SkeletonPage";
-import PageNotFound from "../page/PageNotFound";
+import PageNotFound from "../page-not-found/PageNotFound";
 import { getEpisodeAndSuccess } from "../../helpers/dataDesctructuring";
 
 export default function EpisodePageContainer() {

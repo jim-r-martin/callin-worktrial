@@ -3,7 +3,7 @@ import useLink from "../hooks/useLink";
 import { READ_WEB_SHOW } from "../../gql/queries";
 import ShowPage from "./ShowPage";
 import SkeletonPage from "../shared/SkeletonPage";
-import PageNotFound from "../page/PageNotFound";
+import PageNotFound from "../page-not-found/PageNotFound";
 import { getShowAndSuccess } from "../../helpers/dataDesctructuring";
 import { useMemo } from "react";
 
