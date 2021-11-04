@@ -108,7 +108,7 @@
 
 // Styles for PageNoteFound and ErrorPage components
 // in a real-world scenario I would break these out but for brevitys sake I threw them in here
-.page-not-found {
+.page-not-found, .err-page-container {
   display: flex;
   flex-direction: row;
   align-items: center;

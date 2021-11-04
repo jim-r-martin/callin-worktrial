@@ -1,8 +1,8 @@
 export default function ErrorPage() {
   return (
     <div className="err-page-container">
-      <div>404</div>
-      <div>This page could not be found</div>
+      <h1 className="left callin-red">Error</h1>
+      <h2 className="right">Oops, it looks like something went wrong.</h2>
     </div>
   );
 }

@@ -4,6 +4,7 @@ import useQuery from "../hooks/useQuery";
 import { READ_WEB_EPISODE } from "../../gql/queries";
 import EpisodePage from "./EpisodePage";
 import SkeletonPage from "../shared/SkeletonPage";
+import ErrorPage from "../error/ErrorPage";
 import PageNotFound from "../page-not-found/PageNotFound";
 import { getEpisodeAndSuccess } from "../../helpers/dataDesctructuring";
 
@@ -13,10 +14,11 @@ export default function EpisodePageContainer() {
     link,
   });
 
-  const { episode, success } = useMemo(
-    () => getEpisodeAndSuccess(data),
-    [data]
-  );
+  const {
+    episode,
+    success,
+    errors: gqlErrors,
+  } = useMemo(() => getEpisodeAndSuccess(data), [data]);
 
   if (loading) {
     return <SkeletonPage headerText="Episode Preview" />;
@@ -24,6 +26,10 @@ export default function EpisodePageContainer() {
 
   if (!episode && success) {
     return <PageNotFound />;
+  }
+
+  if (errors || gqlErrors) {
+    return <ErrorPage />;
   }
 
   return <EpisodePage errors={errors} episode={episode} />;
