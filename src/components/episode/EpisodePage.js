@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import MetaTitle from "../shared/MetaTitle";
 import CategoriesList from "../shared/CategoriesList";
 import UsersList from "../shared/UsersList";
+import ImageFadeIn from "../shared/ImageFadeIn";
 import {
   ContentHeader,
   ContentContainer,
@@ -29,8 +30,8 @@ export default function EpisodePage({ episode = {}, errors }) {
         <ContentLeftCol>
           <SectionContainer>
             <Section classes="image-container">
-              <img
-                className="abs-pos-img show-photo"
+              <ImageFadeIn
+                classes="abs-pos-img show-photo"
                 src={episode.show.photo}
                 alt={`${episode.show.title}`}
               />

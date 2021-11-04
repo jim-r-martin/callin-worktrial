@@ -2,6 +2,7 @@ import MetaTitle from "../shared/MetaTitle";
 import EpisodesList from "./EpisodesList";
 import CategoriesList from "../shared/CategoriesList";
 import UsersList from "../shared/UsersList";
+import ImageFadeIn from "../shared/ImageFadeIn";
 import {
   ContentHeader,
   ContentContainer,
@@ -23,8 +24,8 @@ export default function ShowPage({ show = {}, errors }) {
         <ContentLeftCol>
           <SectionContainer>
             <Section classes="image-container">
-              <img
-                className="abs-pos-img show-photo"
+              <ImageFadeIn
+                classes="abs-pos-img show-photo"
                 src={show.photo}
                 alt={`${show.title}`}
               />

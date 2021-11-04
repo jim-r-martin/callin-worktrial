@@ -6,6 +6,15 @@
   padding-top: 100%;
 }
 
+.img-fade-in {
+  opacity: 0;
+
+  &.loaded {
+    opacity: 1;
+    transition: opacity 1s;
+  }
+}
+
 .abs-pos-img {
   position: absolute;
   top: 0;
