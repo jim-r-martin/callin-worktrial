@@ -27,6 +27,10 @@ const Section = ({ children, classes = "" }) => (
   <div className={`view-section ${classes}`}>{children}</div>
 );
 
+const ImageBackground = ({ classes = "" }) => (
+  <div className={`abs-pos-img-bkg ${classes}`} />
+);
+
 const Divider = ({ classes = "" }) => <hr className={`divider ${classes}`} />;
 
 export {
@@ -36,5 +40,6 @@ export {
   ContentRightCol,
   SectionContainer,
   Section,
+  ImageBackground,
   Divider,
 };

@@ -12,6 +12,7 @@ import {
   SectionContainer,
   Section,
   Divider,
+  ImageBackground,
 } from "../shared/Presentation";
 import { formatDate, formatRunTime } from "../../helpers/format";
 
@@ -30,6 +31,7 @@ export default function EpisodePage({ episode = {}, errors }) {
         <ContentLeftCol>
           <SectionContainer>
             <Section classes="image-container">
+              <ImageBackground classes="show-photo" />
               <ImageFadeIn
                 classes="abs-pos-img show-photo"
                 src={episode.show.photo}
