@@ -8,6 +8,8 @@
 
   .user-container {
     display: block;
+    width: 72px;
+    max-width: 72px;
 
     .image-container {
       display: block;
@@ -22,6 +24,7 @@
 
     .user-name {
       text-align: center;
+      margin-top: 4px;
     }
   }
 }
