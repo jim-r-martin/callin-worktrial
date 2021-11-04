@@ -11,25 +11,25 @@ Below is a list of some links for testing the different pages and functionality
 
 * [Show](https://callin-worktrial.herokuapp.com/show/a-kiss-on-the-lips-phjmSjCNLM)
 * [Episode](https://callin-worktrial.herokuapp.com/episode/emotes-yRZyeGfcUn)
-* [Episode that has audio](https://callin-worktrial.herokuapp.com/episode/x-CstOqNRiiS) should hear keyboard clicks about 9 secs in
+* [Episode that has audio](https://callin-worktrial.herokuapp.com/episode/x-CstOqNRiiS) - should hear keyboard clicks about 9 secs in
 
 ## Technical Decisions and Considerations
 
 ### Connection to GraphQL backend
-I decided to use the fetch api rather than a framework like apollo or relay. The benefit in this approach is not having to increase the bundle size while being pretty straightforward and not requiring much extra development work. I did abstracted out the logic of making a query in a very similar manner to how apollo works so if that transition were necessary in the future it should not be too much work. The main drawback is not having a client side cache out of the box. Something to consider as the application were to grow.
+Using the fetch api rather than a framework like apollo or relay. Doesn't increase bundle size and dev work for dealing with gql using fetch is minial. Abstracted out query logic very similar to the patterns apollo uses, so a migration at a later point should be a minimal amount of work. Main drawback is not having a client side cache out of the box, would need to consider moving forward as user base grows as well as app complexity.
 
 ### HLS Media Player
-I went with using the ReactPlayer package which provides a react component for rendering media players. This package is lightweight and is pretty straightforward to use. It also provides an easy framework for dealing with handling hls on platforms where it is natively handled (iOS) and where it is not.
+Using ReactPlayer package. Package is lightweight, easy to configure, and it handles dealing with hls on platforms where it is natively handled (iOS). The current audio tag that is rendered styling is bound to platform native styling. To customize in the future would need to build a custom controls component. The audio/video api is easy to work with though so very do-able.
 
 ### Improved UX regarding images
-Implemented block elements that fill the space where images will render to prevent jerky page jumps on image loads. Also implemnted a transition state
-for when images do load so that is more smooth. One final thing to note is I did notice that the user photo images are much larger than what is actually rendered. I could see value in potentially storing smaller versions of the user photo. Would of course need to weigh the trade-off in increased complexity on the backend as well as an increase in cloud storage usage.
+Ensured space allocated for images while loading to prevent page jumps. Also implemented logic for fading an image in when it loads to make process less abrupt.
+One thing I did notice was that user photos have an unnecessarily large sice in certain places. In the future may want to weigh the client performance optimization potential for storing multiple user photo sizes vs the increase in complexity for back end and increase in storage.
 
 ## Notes on work I did not get to
 
 ### Search Bar
-This should be relatively straightforward. Make queries based on user input and render the results. I would most likely think to use debouncing to trigger the queries, as apposed to requiring the user to hit enter or click on a submit button. Also for the UI I would probably split out the results for episodes vs shows. 
-Two things I noticed that I would want to call out with regards to the client opperating as the product scales. The first is that the readShowsSearch query accepts a limit param but readEpisodesSearch does not. Also, in my inital pass through the schema docs I did not see the ability to paginate these responses, which could definitely help improve the ux at some point in the future.
+Should be straightforward. Query shows/episodes based on user input and render results. Also most likely will want to use debouncing to trigger query for improved ux. Potentially would want to show two seperate lists for the diff queries.
+Two things of note. One is that the readShowsSearch query accepts a limit param but readEpisodesSearch does not. Two, I did not see the ability to paginate these search queires. Could become important as the amount of data starts to scale.
 
 ### Testing
-With the short time frame I did not write any tests. I will say though my philosophy on testing is to rely very heavily on unit tests and then run integration tests on where necessary for critical/high-impact flows. This focus on writing unit tests is why I like to seperate out container and presentational components (ex: ContainerStagePage vs StagePage). It makes it much easier to test and makes mocking data a lot easier bc you don't need to stub the api calls.
+With the short time frame I did not write any tests. In general though my philosophy on testing is to rely very heavily on unit tests and then run integration tests on where necessary for critical/high-impact flows. This approach also influences my decisiosn regarding component structure and the case for seperating out container and presentational components (ex: ContainerStagePage vs StagePage). Makes unit testing and mocking much easier as you don't have to worry about stubbing out api request logic.
