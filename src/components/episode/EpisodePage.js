@@ -1,5 +1,6 @@
 import { useMemo } from "react";
 import { Link } from "react-router-dom";
+import MediaPlayer from "../media-player/MediaPlayer";
 import MetaTitle from "../shared/MetaTitle";
 import CategoriesList from "../shared/CategoriesList";
 import UsersList from "../shared/UsersList";
@@ -78,6 +79,7 @@ export default function EpisodePage({ episode = {}, errors }) {
           </SectionContainer>
         </ContentRightCol>
       </ContentContainer>
+      <MediaPlayer url={episode.m3u8} />
     </div>
   );
 }
