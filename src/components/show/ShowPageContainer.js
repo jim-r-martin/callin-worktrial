@@ -16,7 +16,7 @@ export default function ShowPageContainer() {
   const { show, success } = useMemo(() => getShowAndSuccess(data), [data]);
 
   if (loading) {
-    return <SkeletonPage headerText="Episode Preview" />;
+    return <SkeletonPage headerText="Show Preview" />;
   }
 
   if (!show && success) {
