@@ -1,13 +1,11 @@
 import { useMemo, useState } from "react";
 import { Link } from "react-router-dom";
+import { useEpisodePath } from "../hooks/useRelPaths";
 import { formatDate, formatRunTime } from "../../helpers/format";
 
 export default function EpisodeItem({ episode }) {
   const [hovered, setHovered] = useState(false);
-  const linkPath = useMemo(() => {
-    const path = episode.linkObj.resourceUrl.split(".com")[1];
-    return path;
-  }, [episode]);
+  const linkPath = useEpisodePath(episode);
 
   const epTitleClass = useMemo(() => {
     const baseClasses = "elips-overflow body-text-bold";

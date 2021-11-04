@@ -1,5 +1,5 @@
-import { useMemo } from "react";
 import { Link } from "react-router-dom";
+import { useShowPath } from "../hooks/useRelPaths";
 import MetaTitle from "../shared/MetaTitle";
 import CategoriesList from "../shared/CategoriesList";
 import UsersList from "../shared/UsersList";
@@ -17,10 +17,7 @@ import {
 import { formatDate, formatRunTime } from "../../helpers/format";
 
 export default function EpisodePage({ episode = {}, errors }) {
-  const showLinkPath = useMemo(() => {
-    const path = episode.show.linkObj.resourceUrl.split(".com")[1];
-    return path;
-  }, [episode]);
+  const showLinkPath = useShowPath(episode);
 
   return (
     <div>
